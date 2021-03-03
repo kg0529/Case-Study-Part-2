@@ -32,7 +32,7 @@
                 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
      - name: update for install docker
-       shell: sudo apt-get update
+       shell: sudo apt update
 
      - name: install docker-ce
        shell: sudo apt-get install -y docker-ce
@@ -56,7 +56,7 @@
        shell: curl https://raw.githubusercontent.com/hashicorp/learn-terraform-deploy-nginx-kubernetes-provider/master/kind-config.yaml --output kind-config.yaml
 
      - name: install
-       shell: sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+       shell: sudo apt update && sudo apt-get install -y apt-transport-https gnupg2 curl
 
      - name: add key
        shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -65,7 +65,7 @@
        shell: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 
      - name: update again to install kubectl
-       shell: sudo apt-get update
+       shell: sudo apt update
 
      - name: install kubectl
        shell: sudo apt-get install -y kubectl
@@ -80,7 +80,7 @@
        shell: echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 
      - name: update for install helm
-       shell: sudo apt-get update
+       shell: sudo apt update
 
      - name: install helm
        shell: sudo apt-get install helm
