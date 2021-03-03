@@ -54,3 +54,5 @@
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s13.png?raw=true)
      
 
+## Problems encountered ##
+1. Original I want to use ELK stack to monitoring the kubernetes cluster. The Kiabana does support for monitoring Kubernetes, however the metricbeat couldn't pick up the kubernetes data, I spent whole day tring to fix this problem, but still can't get it to work. Then switch to prometheus and use Grafana to monitor the kubernetes cluster instead.
