@@ -12,4 +12,6 @@ kubectl port-forward deployment/prometheus-grafana 3000
 
 grafana: admin prom-operator
 
-sudo stress --cpu  2 --timeout 10
+sudo stress --cpu  4 --timeout 10
+
+helm install prometheus prometheus-community/kube-prometheus-stack
