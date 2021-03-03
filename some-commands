@@ -8,4 +8,8 @@ docker-compose build
 
 docker-compose down -v
 
-stress 
+kubectl port-forward deployment/prometheus-grafana 3000
+
+grafana: admin prom-operator
+
+sudo stress --cpu  2 --timeout 10
