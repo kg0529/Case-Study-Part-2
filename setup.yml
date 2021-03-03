@@ -5,6 +5,6 @@
   tasks:
      - name: insatll
        shell:
-            "touch b"
-            "touch a"
+            touch b
+            touch a
        register: output
