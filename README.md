@@ -17,20 +17,24 @@
    Git, Grafana, kind, Ansible, VM Vituralbox, htop, stress, Docker, ssh, kubectl, Helm.
 ## Steps ##
 1. Creating VM using vagrant as client machine,.Then setting up SSH connection between client and workstation machine.
+
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s1.png?raw=true)
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s2.png?raw=true)
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s2-1.png?raw=true)
 
 
-2. On workstation machine, using Ansible to apply setup.yml to install all necessary software on client machine.
+2. On the workstation machine, using Ansible to apply setup.yml to install all necessary software on client machine like Docker, kubectl, kind and etc.
+
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s3.png?raw=true)
 
 
-3. On workstation machine, using Ansible to apply start-cluster.yml to start a kubernetes cluster on client machine
+3. On the workstation machine, using Ansible to apply start-cluster.yml to start a kubernetes cluster on client machine.
+
   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s4.png?raw=true)  
   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s4-1.png?raw=true)
 
-4. On workstation machine, create a CICD pipeline in jenkins which will deploy the flask app on client machine trhough Ansible. This pipeline will check the github repo every 15 mins, trigger a new build if any changes are made.
+4. On the workstation machine, create a CICD pipeline in jenkins which will deploy the flask app on client machine trhough Ansible. This pipeline will check the github repo every 15 mins, trigger a new build if any changes are made.
+5. 
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s6.png?raw=true)
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s7.png?raw=true)  
 
