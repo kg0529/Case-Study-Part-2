@@ -3,5 +3,5 @@
 
   tasks:
      - name: start up kubernetes cluster
-       shell:  kind create cluster --name terraform-learn --config kind-config.yaml
+       shell:  kind create cluster --name flask --config kind-config.yaml
        register: output
