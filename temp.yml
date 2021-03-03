@@ -3,5 +3,7 @@
 
   tasks:
      - name: start up 
-       shell:  sudo apt update
+       shell:  
+            sudo apt update
+            sudo apt install -y git
        register: output
