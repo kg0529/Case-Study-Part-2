@@ -1,40 +1,87 @@
-  
 - hosts: client
 
 
   tasks:
+     - name: update 
+       shell:  sudo apt update
+
+     - name: install git
+       shell: sudo apt install -y git
+     
+     - name: install jdk
+       shell: sudo apt-get install -y openjdk-8-jdk
+
+     - name: install apt-transport-https
+       shell: sudo apt-get install -y  apt-transport-https
+
+     - name: install ca-certificates
+       shell: sudo apt-get install -y  ca-certificates
+
+     - name: install curl
+       shell: sudo apt-get install -y  curl
+
+     - name: install gnupg
+       shell: sudo apt-get install -y  gnupg
+
+     - name: curl
+       shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+     - name: echo
+       shell: echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+     - name: update for install docker
+       shell: sudo apt update
+
+     - name: install docker-ce
+       shell: sudo apt-get install -y docker-ce
+
+     - name: install docker-ce-cli
+       shell: sudo apt-get install -y docker-ce-cli
+
+     - name: install containerd.io
+       shell: sudo apt-get install -y containerd.io
+
+     - name: curl kind
+       shell: curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
+
+     - name: change permission for kind
+       shell: sudo chmod +x ./kind
+
+     - name: move kind
+       shell: sudo mv ./kind /bin/kind
+
+     - name: curl kind yaml
+       shell: curl https://raw.githubusercontent.com/hashicorp/learn-terraform-deploy-nginx-kubernetes-provider/master/kind-config.yaml --output kind-config.yaml
+
      - name: install
-       shell:
-            sudo apt-get update
-            sudo apt-get install -y git
-            sudo apt-get install -y openjdk-9-jdk
-            sudo apt-get install -y  apt-transport-https
-            sudo apt-get install -y  ca-certificates 
-            sudo apt-get install -y  curl 
-            sudo apt-get install -y  gnupg
-            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-            echo \
-                "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-                $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-            sudo apt-get update
-            sudo apt-get install -y docker-ce
-            sudo apt-get install -y docker-ce-cli
-            sudo apt-get install -y containerd.io
-            git clone https://github.com/kg0529/exercise.docker-elk.git
-            curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
-            sudo chmod +x ./kind
-            sudo mv ./kind /bin/kind
-            curl https://raw.githubusercontent.com/hashicorp/learn-terraform-deploy-nginx-kubernetes-provider/master/kind-config.yaml --output kind-config.yaml
-            sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
-            curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-            echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-            sudo apt-get update
-            sudo apt-get install -y kubectl
-            curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-            sudo apt-get install apt-transport-https --yes
-            echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-            sudo apt-get update
-            sudo apt-get install helm
-       args:
-         warn: false            
-       register: output
+       shell: sudo apt update && sudo apt-get install -y apt-transport-https gnupg2 curl
+
+     - name: add key
+       shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+     - name: echo kubernetes
+       shell: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
+     - name: update again to install kubectl
+       shell: sudo apt update
+
+     - name: install kubectl
+       shell: sudo apt-get install -y kubectl
+
+     - name: curl for helm
+       shell: curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+
+     - name: install apt
+       shell: sudo apt-get install apt-transport-https --yes
+
+     - name: prepare to install helm
+       shell: echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+
+     - name: update for install helm
+       shell: sudo apt update
+
+     - name: install helm
+       shell: sudo apt-get install helm
+
+
+       
