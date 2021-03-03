@@ -10,5 +10,8 @@
   7. Monitoring together with htop for CPU and memory usage.
   8. Stress test with stress utility in Ubuntu.
   
+## Design Graph ##
+![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s14.png?raw=true)
+
 ## Tools used ##
-   Git, Grafana, kind, Ansible, VM Vituralbox, htop, stress, Docker, ssh, 
+   Git, Grafana, kind, Ansible, VM Vituralbox, htop, stress, Docker, ssh, kubectl, Helm.
