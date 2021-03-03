@@ -41,5 +41,16 @@
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s8.png?raw=true)
 
 
-5. ABC
+5. Start up the prometheus on the cluster, then monitoring the cluster and flask app in Grafana. Having the dashboard up for cpu and memory usage.
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s9.png?raw=true)
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s10.png?raw=true)
+
+
+6. Having the htop up to monitor the cpu and memory usage in the client machine.
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s12.png?raw=true)
+
+
+7. Using stress to stress the machine, along side with Grafana and htop, showing the cpu usage during the stress.
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s13.png?raw=true)
+     
 
