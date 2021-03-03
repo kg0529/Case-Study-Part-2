@@ -28,7 +28,12 @@
 
 3. On workstation machine, using Ansible to apply start-cluster.yml to start a kubernetes cluster on client machine
   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s4.png?raw=true)  
-  
+  ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s4-1.png?raw=true)
 
-4. 
+4. On workstation machine, create a CICD pipeline in jenkins which will deploy the flask app on client machine trhough Ansible. This pipeline will check the github repo every 15 mins, trigger a new build if any changes are made.
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s6.png?raw=true)
+   ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s7.png?raw=true)  
+
+
+5. 
 
