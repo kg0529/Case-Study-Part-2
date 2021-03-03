@@ -7,3 +7,5 @@ ocker-compose up
 docker-compose build
 
 docker-compose down -v
+
+stress 

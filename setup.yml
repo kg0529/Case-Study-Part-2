@@ -1,0 +1,10 @@
+  
+- hosts: client
+
+
+  tasks:
+     - name: insatll
+       shell:
+            "touch b
+            "touch a"
+       register: output
