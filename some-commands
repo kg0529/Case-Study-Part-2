@@ -1,1 +1,3 @@
 sudo chmod 666 /var/run/docker.sock
+
+kubectl get all --all-namespaces
