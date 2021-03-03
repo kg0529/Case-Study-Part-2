@@ -1,0 +1,6 @@
+- hosts: client
+
+
+  tasks:
+     - name: start up kubernetes cluster
+       shell:  kind create cluster --name terraform-learn --config kind-config.yaml
