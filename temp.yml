@@ -9,7 +9,7 @@
        shell: sudo apt install -y git
      
      - name: install jdk
-       shell: sudo apt-get install -y openjdk-9-jdk
+       shell: sudo apt-get install -y openjdk-8-jdk
 
      - name: install apt-transport-https
        shell: sudo apt-get install -y  apt-transport-https
