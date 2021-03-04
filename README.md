@@ -60,7 +60,7 @@
 7. Using stress utility to stress the machine, along side with Grafana and htop, showing the cpu usage during the stress.
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s13.png?raw=true)
      
-8. Trying to write a shell script that monitoring cpu usage and print out usage every 2s, print out warning if usage goes above 60. However, when I am doing stress, the VM feeze, include the script, so it won't print out anything during the stress.
+8. Trying to write a shell script that monitoring cpu usage and print out usage every 2s, print out warning if usage goes above 60. However, when I am doing stress, the VM freeze, include the script, so it won't print out anything during the stress.
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s18.png?raw=true)
    ![](https://github.com/kg0529/Case-Study-Part-2/blob/main/screenshots/s19.png?raw=true)
     
